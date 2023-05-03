@@ -23,7 +23,6 @@ export default function Overlay(props: IProps) {
     } else {
       closeOverlay();
     }
-    // console.log({'isoverlayOpen':props.isOpen})
     return () => {};
   }, [props.isOpen]);
   return (

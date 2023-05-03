@@ -119,13 +119,10 @@ class GetDailyAttendanceRepo {
     let monthlyShift;
     if (currentMonthShifts == null) {
       monthlyShift = [];
-      console.log("here");
     } else {
       ({ monthlyShift } = currentMonthShifts);
       console.log("currentMonthShifts: ", currentMonthShifts);
-      console.log("there");
     }
-    console.log(monthlyShift);
     const results = {
       todaysVacations,
       todaysErrands,

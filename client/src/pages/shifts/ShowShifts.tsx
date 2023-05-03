@@ -199,37 +199,34 @@ function ShowShifts() {
                   (shiftRow: any, index: any) => {
                     try {
                       return (
-                        <>
-                          <tr>
-                            <td>{getDayNameInArabicFromDate(shiftRow.date)}</td>
-                            <td>
-                              <div className="mb-3">{shiftRow.date}</div>
-                            </td>
-                            <td>
-                              <div className="mb-3">
-                                {shiftRow.dutyManagerOfficer.rank.rank +
+                        <tr>
+                          <td>{getDayNameInArabicFromDate(shiftRow.date)}</td>
+                          <td>
+                            <div className="mb-3">{shiftRow.date}</div>
+                          </td>
+                          <td>
+                            <div className="mb-3">
+                              {shiftRow.dutyManagerOfficer.rank.rank +
+                                "/" +
+                                shiftRow.dutyManagerOfficer.name}
+                            </div>
+                          </td>
+                          <td>
+                            <div className="mb-3">
+                              {shiftRow.strategicDutyManagerOfficer &&
+                                shiftRow.strategicDutyManagerOfficer.rank.rank +
                                   "/" +
-                                  shiftRow.dutyManagerOfficer.name}
-                              </div>
-                            </td>
-                            <td>
-                              <div className="mb-3">
-                                {shiftRow.strategicDutyManagerOfficer &&
-                                  shiftRow.strategicDutyManagerOfficer.rank
-                                    .rank +
-                                    "/" +
-                                    shiftRow.strategicDutyManagerOfficer.name}
-                              </div>
-                            </td>
-                            <td>
-                              <div className="mb-3">
-                                {shiftRow.shiftOfficer.rank.rank +
-                                  "/" +
-                                  shiftRow.shiftOfficer.name}
-                              </div>
-                            </td>
-                          </tr>
-                        </>
+                                  shiftRow.strategicDutyManagerOfficer.name}
+                            </div>
+                          </td>
+                          <td>
+                            <div className="mb-3">
+                              {shiftRow.shiftOfficer.rank.rank +
+                                "/" +
+                                shiftRow.shiftOfficer.name}
+                            </div>
+                          </td>
+                        </tr>
                       );
                     } catch (e) {
                       console.log("error is: ", e);

@@ -42,7 +42,6 @@ function ApprovalBlock(props: IProps) {
     }
 
     if (props.storedData.vacation[props.approvalPropertyName] === true) {
-      console.log("here1");
       return props.storedData.vacation[props.approvalPropertyName];
     }
 
@@ -54,7 +53,6 @@ function ApprovalBlock(props: IProps) {
       return approved === false;
     }
     if (props.storedData.vacation[props.approvalPropertyName] === false) {
-      console.log("here2");
       return !props.storedData.vacation[props.approvalPropertyName];
     }
 

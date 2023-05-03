@@ -46,13 +46,10 @@ function ShiftsForm(props: IProps) {
 
   const removeShiftRow = (rowIndexToRemove: any) => {
     let shiftRowsCopy = [...shiftRows];
-    console.log("shiftRowsCopy: ", shiftRowsCopy);
-    console.log("rowIndexToRemove: ", rowIndexToRemove);
     shiftRowsCopy = shiftRowsCopy.filter((shiftRow, index) => {
       const isElementNotToBeRemoved = index !== rowIndexToRemove;
       return isElementNotToBeRemoved;
     });
-    console.log("shiftRowsCopy1: ", shiftRowsCopy);
     setShiftRows(shiftRowsCopy);
   };
 

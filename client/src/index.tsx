@@ -25,17 +25,11 @@ window.bc = bc;
 bc.onmessage = (event) => {
   let data = event.data;
   if (data.type === "loggedin") {
-    // console.log({ data });
-
     window.location.href = "/";
   }
   if (data.type === "loggedout") {
-    // console.log({ data });
     store.dispatch(removeAuthData());
     window.location.href = "/login";
-
-    // localStorage.removeItem('token')
-    // window.location.reload()
   }
 };
 const root = ReactDOM.createRoot(
