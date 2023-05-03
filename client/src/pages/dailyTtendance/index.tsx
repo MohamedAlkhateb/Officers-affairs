@@ -157,6 +157,7 @@ function DailyAttendance() {
               </Table>
             </>
           )}
+          {console.log("dailyAttendance: ", dailyAttendance)}
           {!!dailyAttendance.monthlyShift.length && (
             <>
               <br />

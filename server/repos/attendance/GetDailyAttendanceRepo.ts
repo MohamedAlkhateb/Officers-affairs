@@ -66,7 +66,7 @@ class GetDailyAttendanceRepo {
     }
     const currentMonthIndex = new Date().getMonth();
 
-    const currentMonthShifts = await Shift.findOne({
+    let currentMonthShifts = await Shift.findOne({
       year: getCurrentYear(),
       month: currentMonthIndex,
     })
@@ -116,7 +116,16 @@ class GetDailyAttendanceRepo {
         model: "Branch",
       })
       .sort("sequenceNumber");
-    const { monthlyShift } = currentMonthShifts;
+    let monthlyShift;
+    if (currentMonthShifts == null) {
+      monthlyShift = [];
+      console.log("here");
+    } else {
+      ({ monthlyShift } = currentMonthShifts);
+      console.log("currentMonthShifts: ", currentMonthShifts);
+      console.log("there");
+    }
+    console.log(monthlyShift);
     const results = {
       todaysVacations,
       todaysErrands,
